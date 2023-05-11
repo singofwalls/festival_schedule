@@ -1,16 +1,16 @@
 purple:
   12:25pm:
     name: P.O.D.
-    length: 30
+    length: 35
   1:35pm:
     name: Flyleaf With Lacey Sturm
-    length: 30
+    length: 35
   2:45pm:
     name: Death Grips
     length: 35
   3:55pm:
     name: Chevelle
-    length: 40
+    length: 35
   5:15pm:
     name: Evanescence
     length: 45
@@ -24,19 +24,19 @@ purple:
 green:
   11:50am:
     name: Alien Ant Farm
-    length: 30
+    length: 35
   1:00pm:
     name: Soulfly
-    length: 30
+    length: 35
   2:10pm:
     name: Papa Roach
-    length: 30
+    length: 35
   3:20pm:
     name: Mr. Bungle
-    length: 40
+    length: 35
   4:30pm:
     name: Turnstile
-    length: 40
+    length: 45
   6:00pm:
     name: Incubus
     length: 80

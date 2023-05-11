@@ -112,6 +112,7 @@
         <h5 class="card-title display-5">
             <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
         </h5>
+        Set end-times are eyeballed off of the <a href="https://www.sicknewworldfest.com/" class="button">official schedule</a>
         <br>
         <div style="text-align: center;">
             Share Link: <a href='javascript:copy_bits()' id="share_link" class="btn button" type="button"></a>
@@ -127,7 +128,7 @@
         </div>
 
         {% for time, stage in times.items %}
-            <div class="d-flex flex-row flex-nowrap" style="height: 2em;">
+            <div class="d-flex flex-row flex-nowrap" style="height: 1.5em;">
                 <div style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap; font-size: smaller">
                     {{ time|date:'h:i A' }}
                 </div>
