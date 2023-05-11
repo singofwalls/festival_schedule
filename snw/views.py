@@ -13,7 +13,7 @@ class ScheduleView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["times"] = parse_times()
+        context["times"], context["band_nums"] = parse_times()
         context["stages"] = stages
 
         return context
@@ -41,11 +41,13 @@ def parse_times():
     with open(BASE_DIR / "set_times.yaml") as f:
         set_times = load(f, Loader)
 
+    bands = []
     times = {t: {stage: Band() for stage in stages} for t in list(gen_times())[::-1]}
     for stage, sets in set_times.items():
         for time, band in sets.items():
             time = datetime.combine(datetime.today(), datetime.strptime(time, "%I:%M%p").time())
             slots = list(gen_times(time, band["length"]))
+            bands.append(band["name"].replace(" ", "").strip())
             for i, time_slot in enumerate(slots):
                 times[time_slot][stage].name = band["name"]
                 if i == 0:
@@ -55,4 +57,4 @@ def parse_times():
                 elif i == len(slots) - 1:
                     times[time_slot][stage].position = "top"
 
-    return times
+    return times, bands

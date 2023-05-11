@@ -3,8 +3,16 @@
     color: rgb(205, 206, 136);
 }
 
+
+
 .responsive_text {
     font-size: 1.5vw;
+}
+
+.button {
+    color: rgb(205, 206, 136);
+    border: 0px;
+    margin-bottom: 3px;
 }
 
 

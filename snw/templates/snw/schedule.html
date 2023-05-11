@@ -14,14 +14,20 @@
 <body>
     <script>
         let selected_bands = [];
+        let band_bits = BigInt(0);
+        let band_nums = {{ band_nums|safe }};
 
         function select(band) {
+            let band_num = BigInt(band_nums.indexOf(band));
+
             let ind = selected_bands.indexOf(band);
             if (ind > -1) {
                 // Unselect
                 selected_bands.splice(ind, 1);
+                band_bits = band_bits & ~(BigInt(2)**band_num);
             } else {
                 selected_bands.push(band);
+                band_bits |= (BigInt(2)**band_num);
             }
             document.cookie = "selected_sets=" + selected_bands + "; path=/";
             refresh_selected();
@@ -38,7 +44,20 @@
                     ele.style.borderColor="white";
                 }
             }
+            let share_link = document.getElementById("share_link");
+            let param_loc = window.location.href.indexOf('?');
+            if (param_loc < 0) {
+                 param_loc = window.location.href.length;
+            }
+            let url = window.location.href.substring(0, param_loc);
+            share_link.innerText = url + "?bands=" + band_bits;
         }
+
+        function copy_bits() {
+            let ele = document.getElementById("share_link");
+            navigator.clipboard.writeText(ele.innerText);
+        }
+
         // from https://stackoverflow.com/a/25346429
         function getCookie(name) {
             function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
@@ -48,6 +67,7 @@
 
     </script>
     <script defer>
+        // Check cookies
         let bands = getCookie("selected_sets");
         if (bands !== null) {
             selected_bands = bands.split(",");
@@ -55,6 +75,28 @@
             if (ind > -1) {
                 selected_bands.splice(ind, 1);
             }
+            for (let band of selected_bands) {
+                let band_num = BigInt(band_nums.indexOf(band));
+                band_bits |= BigInt(2)**band_num;
+            }
+        }
+
+        // Check url param
+        var queryString = location.search;
+        let params = new URLSearchParams(queryString);
+        if (params.get("bands") !== null) {
+            band_bits = BigInt(0);
+            let band_num = BigInt(params.get("bands"));
+            // Bands in url query
+            selected_bands = [];
+            for (let i = BigInt(0); i < band_nums.length; i++) {
+                if (band_num & BigInt(2)**i) {
+                    selected_bands.push(band_nums[i]);
+                    band_bits |= BigInt(2)**i;
+                }
+            }
+            document.cookie = "selected_sets=" + selected_bands + "; path=/";
+            window.history.replaceState({}, document.title, "/");
         }
 
         setTimeout(refresh_selected, 10);
@@ -64,6 +106,9 @@
             <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
         </h5>
         <br>
+        <div style="text-align: center;">
+            Share Link: <a href='javascript:copy_bits()' id="share_link" class="btn button" type="button"></a>
+        </div>
         <div class="d-flex flex-row flex-nowrap">
             <div style="width:15%; margin-right: 5px;">
             </div>
@@ -73,6 +118,7 @@
                 </div>
             {% endfor %}
         </div>
+
         {% for time, stage in times.items %}
             <div class="d-flex flex-row flex-nowrap" style="height: 2em;">
                 <div style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap; font-size: smaller">
