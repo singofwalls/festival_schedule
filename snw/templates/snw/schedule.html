@@ -37,11 +37,13 @@
             for (let ele of document.getElementsByClassName("band")) {
                 ele.style.borderWidth=1;
                 ele.style.borderColor="darkgrey";
+                ele.style.backgroundColor="rgb(27, 25, 29)";
             }
             for (let band of selected_bands) {
                 for (let ele of document.getElementsByClassName("band_" + band)) {
-                    ele.style.borderWidth=10;
+                    ele.style.borderWidth=3;
                     ele.style.borderColor="white";
+                    ele.style.backgroundColor=ele.dataset.color;
                 }
             }
             let share_link = document.getElementById("share_link");
@@ -56,6 +58,8 @@
         function copy_bits() {
             let ele = document.getElementById("share_link");
             navigator.clipboard.writeText(ele.innerText);
+            const toast = new bootstrap.Toast(document.getElementById("copy_toast"));
+            toast.show();
         }
 
         // from https://stackoverflow.com/a/25346429
@@ -101,6 +105,9 @@
 
         setTimeout(refresh_selected, 10);
     </script>
+    <div class="toast shadow-none" id="copy_toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000" style="position: fixed; right: 10%; top: 10%; border: 0px; text-align: center; z-index: 10000; width: 15em;">
+        <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid darkgrey; border-radius: 5px;">Copied to Clipboard</div>
+    </div>
     <div class="container" style="flex-flow: row wrap; margin-top: 20px">
         <h5 class="card-title display-5">
             <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
@@ -112,8 +119,8 @@
         <div class="d-flex flex-row flex-nowrap">
             <div style="width:15%; margin-right: 5px;">
             </div>
-            {% for stage in stages %}
-                <div style="width:20%; margin-right: 5px; text-align: center;">
+            {% for stage, color in stages.items %}
+                <div style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }};">
                     {{ stage }}
                 </div>
             {% endfor %}
@@ -125,8 +132,8 @@
                     {{ time|date:'h:i A' }}
                 </div>
                 {% for stage_name, band in stage.items %}
-                    <div class="band band_{{ band.name|cut:' ' }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
-                        {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; background-color: {{ stages|get_item:stage_name }}; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
+                    <div {% if band.name %} class="band band_{{ band.name|cut:' ' }}" {% endif %} data-color="{{ stages|get_item:stage_name }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
+                        {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
                         {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
                         {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}
                         "
