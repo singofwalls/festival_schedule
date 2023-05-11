@@ -1,0 +1,97 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    {% load static %}
+    {% load snw_extras %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <script>
+        let selected_bands = [];
+
+        function select(band) {
+            let ind = selected_bands.indexOf(band);
+            if (ind > -1) {
+                // Unselect
+                selected_bands.splice(ind, 1);
+            } else {
+                selected_bands.push(band);
+            }
+            document.cookie = "selected_sets=" + selected_bands + "; path=/";
+            refresh_selected();
+        }
+
+        function refresh_selected() {
+            for (let ele of document.getElementsByClassName("band")) {
+                ele.style.borderWidth=1;
+                ele.style.borderColor="darkgrey";
+            }
+            for (let band of selected_bands) {
+                for (let ele of document.getElementsByClassName("band_" + band)) {
+                    ele.style.borderWidth=10;
+                    ele.style.borderColor="white";
+                }
+            }
+        }
+        // from https://stackoverflow.com/a/25346429
+        function getCookie(name) {
+            function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+            var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+            return match ? match[1] : null;
+        }
+
+    </script>
+    <script defer>
+        let bands = getCookie("selected_sets");
+        if (bands !== null) {
+            selected_bands = bands.split(",");
+            let ind = selected_bands.indexOf('');
+            if (ind > -1) {
+                selected_bands.splice(ind, 1);
+            }
+        }
+
+        setTimeout(refresh_selected, 10);
+    </script>
+    <div class="container" style="flex-flow: row wrap; margin-top: 20px">
+        <h5 class="card-title display-5">
+            <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
+        </h5>
+        <br>
+        <div class="d-flex flex-row flex-nowrap">
+            <div style="width:10%; margin-right: 5px;">
+            </div>
+            {% for stage in stages %}
+                <div style="width:20%; margin-right: 5px; text-align: center;">
+                    {{ stage }}
+                </div>
+            {% endfor %}
+        </div>
+        {% for time, stage in times.items %}
+            <div class="d-flex flex-row flex-nowrap" style="height: 2em;">
+                <div style="width:10%; margin-right: 5px; text-align: right; border-top: 1px dotted darkgrey; ">
+                    {{ time|date:'h:i a' }}
+                </div>
+                {% for stage_name, band in stage.items %}
+                    <div class="band band_{{ band.name|cut:' ' }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px; padding: 4px;
+                        {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; background-color: {{ stages|get_item:stage_name }}; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
+                        {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
+                        {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}
+                        "
+                        {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
+                        >
+                        {% if band.position == "middle" %}
+                        <span style="font-size: larger; width: 100%; z-index: 10; text-align: center; background: none; word-break: break-word; position: absolute; padding-right: 10px; overflow-y: visible;">{{ band.name }}</span> <span style="position:relative;"></span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>

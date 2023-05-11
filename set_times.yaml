@@ -1,0 +1,160 @@
+purple:
+  12:25pm:
+    name: P.O.D.
+    length: 30
+  1:35pm:
+    name: Flyleaf With Lacey Sturm
+    length: 30
+  2:45pm:
+    name: Death Grips
+    length: 35
+  3:55pm:
+    name: Chevelle
+    length: 40
+  5:15pm:
+    name: Evanescence
+    length: 45
+  7:20pm:
+    name: Deftones
+    length: 80
+  10:00pm:
+    name: System of a Down
+    length: 80
+
+green:
+  11:50am:
+    name: Alien Ant Farm
+    length: 30
+  1:00pm:
+    name: Soulfly
+    length: 30
+  2:10pm:
+    name: Papa Roach
+    length: 30
+  3:20pm:
+    name: Mr. Bungle
+    length: 40
+  4:30pm:
+    name: Turnstile
+    length: 40
+  6:00pm:
+    name: Incubus
+    length: 80
+  8:40pm:
+    name: Korn
+    length: 80
+
+striped:
+  11:55am:
+    name: Cold
+    length: 30
+  12:30pm:
+    name: Orgy
+    length: 30
+  1:05pm:
+    name: The 69 Eyes
+    length: 30
+  1:40pm:
+    name: London After Midnight
+    length: 40
+  2:25pm:
+    name: The Birthday Massacre
+    length: 30
+  3:00pm:
+    name: Lacuna Coil
+    length: 30
+  3:35pm:
+    name: Stabbing Westward
+    length: 30
+  4:10pm:
+    name: Melvins
+    length: 30
+  4:45pm:
+    name: Filter
+    length: 30
+  5:20pm:
+    name: KMFDM
+    length: 50
+  6:15pm:
+    name: Skinny Puppy
+    length: 50
+  7:10pm:
+    name: She Wants Revenge
+    length: 50
+  8:05pm:
+    name: Ministry
+    length: 50
+  9:00pm:
+    name: Placebo
+    length: 50
+  9:55pm:
+    name: Ville Valo
+    length: 60
+  11:00pm:
+    name: The Sisters of Mercy
+    length: 60
+
+sick:
+  11:35am:
+    name: Scowl
+    length: 30
+  12:10pm:
+    name: Scene Queen
+    length: 30
+  12:45pm:
+    name: Narrow Head
+    length: 30
+  1:20pm:
+    name: Fiddlehead
+    length: 30
+  1:55pm:
+    name: Superheaven
+    length: 30
+  2:30pm:
+    name: Panchiko
+    length: 30
+  3:05pm:
+    name: Coal Chamber
+    length: 30
+  3:40pm:
+    name: Kittie
+    length: 30
+  4:15pm:
+    name: Sevendust
+    length: 30
+  4:50pm:
+    name: Spiritbox
+    length: 30
+  5:25pm:
+    name: Machine Girl
+    length: 30
+  6:00pm:
+    name: Loathe
+    length: 30
+  6:35pm:
+    name: 100 Gecs
+    length: 30
+  7:10pm:
+    name: Hoobastank
+    length: 30
+  7:45pm:
+    name: My Life With the Thrill Kill Kult
+    length: 30
+  8:20pm:
+    name: Fever 333
+    length: 30
+  8:55pm:
+    name: H09909
+    length: 30
+  9:30pm:
+    name: Health
+    length: 30
+  10:05pm:
+    name: Body Count
+    length: 30
+  10:40pm:
+    name: Prayers
+    length: 30
+  11:15pm:
+    name: Cradle of Filth
+    length: 30
