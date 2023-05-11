@@ -2,3 +2,14 @@
     background-color: rgb(27, 21, 26);
     color: rgb(205, 206, 136);
 }
+
+.responsive_text {
+    font-size: 1.5vw;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .responsive_text {
+        font-size: 4vw;
+    }
+}

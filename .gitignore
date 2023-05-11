@@ -2,3 +2,4 @@
 logs/
 __pycache__
 django_key.txt
+*.code-workspace

@@ -65,7 +65,7 @@
         </h5>
         <br>
         <div class="d-flex flex-row flex-nowrap">
-            <div style="width:10%; margin-right: 5px;">
+            <div style="width:15%; margin-right: 5px;">
             </div>
             {% for stage in stages %}
                 <div style="width:20%; margin-right: 5px; text-align: center;">
@@ -75,11 +75,11 @@
         </div>
         {% for time, stage in times.items %}
             <div class="d-flex flex-row flex-nowrap" style="height: 2em;">
-                <div style="width:10%; margin-right: 5px; text-align: right; border-top: 1px dotted darkgrey; ">
-                    {{ time|date:'h:i a' }}
+                <div style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap; font-size: smaller">
+                    {{ time|date:'h:i A' }}
                 </div>
                 {% for stage_name, band in stage.items %}
-                    <div class="band band_{{ band.name|cut:' ' }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px; padding: 4px;
+                    <div class="band band_{{ band.name|cut:' ' }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
                         {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; background-color: {{ stages|get_item:stage_name }}; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
                         {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
                         {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}
@@ -87,7 +87,7 @@
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
                         {% if band.position == "middle" %}
-                        <span style="font-size: larger; width: 100%; z-index: 10; text-align: center; background: none; word-break: break-word; position: absolute; padding-right: 10px; overflow-y: visible;">{{ band.name }}</span> <span style="position:relative;"></span>
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; background: none;  position: absolute; padding: 4px; overflow-y: visible;">{{ band.name }}</span> <span style="position:relative;"></span>
                         {% endif %}
                     </div>
                 {% endfor %}

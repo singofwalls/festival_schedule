@@ -50,7 +50,7 @@ def parse_times():
                 times[time_slot][stage].name = band["name"]
                 if i == 0:
                     times[time_slot][stage].position = "bottom"
-                elif i == len(slots) // 2:
+                elif i == min(len(slots) - 1, len(slots) // 2 + 1):
                     times[time_slot][stage].position = "middle"
                 elif i == len(slots) - 1:
                     times[time_slot][stage].position = "top"
