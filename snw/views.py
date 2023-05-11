@@ -3,7 +3,7 @@ from yaml import load, Loader
 from snw.settings import BASE_DIR
 from datetime import time, timedelta, datetime
 
-stages = {"purple": "rgb(101, 4, 150)", "green": "rgb(10, 95, 7)", "striped": "rgb(77, 77, 77)", "sick": "rgb(173, 54, 163)"}
+stages = {"purple": "rgb(101, 4, 150)", "green": "rgb(10, 95, 7)", "spiral": "rgb(77, 77, 77)", "sick": "rgb(173, 54, 163)"}
 
 
 class ScheduleView(TemplateView):
