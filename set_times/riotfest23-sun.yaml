@@ -1,0 +1,114 @@
+text:
+  title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Sunday Schedule
+  subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
+  color: "gainsboro"
+
+stages:
+  riot: "#f90e46"
+  roots: "#f90e46"
+  radical: "#f90e46"
+  rise: "#f90e46"
+  rebel: "#f90e46"
+
+riot:
+  12:05pm:
+    name: Hotline TNT
+    length: 30
+  1:15pm:
+    name: Just Mustard
+    length: 30
+  2:25pm:
+    name: Cults
+    length: 30
+  3:35pm:
+    name: Ride
+    length: 45
+  5:30pm:
+    name: The Desden Dolls
+    length: 60
+  7:40pm:
+    name: The Cure
+    length: 135
+
+roots:
+  12:40pm:
+    name: Smoking Popes
+    length: 30
+  1:50pm:
+    name: Nothing
+    length: 30
+  3:00pm:
+    name: The Black Angels
+    length: 30
+  4:25pm:
+    name: AFI
+    length: 60
+  6:35pm:
+    name: The Mars Volta
+    length: 60
+
+
+radical:
+  12:00pm:
+    name: Free Throw
+    length: 30
+  12:50pm:
+    name: Microwave
+    length: 30
+  1:40pm:
+    name: Thursday
+    length: 50
+  2:55pm:
+    name: Balance and Composure
+    length: 45
+  4:05pm:
+    name: L.S. Dunes
+    length: 45
+  5:15pm:
+    name: Finch
+    length: 45
+  6:30pm:
+    name: The Used
+    length: 60
+
+rise:
+  12:15pm:
+    name: Fade Em All
+    length: 39
+  1:15pm:
+    name: Empire State Bastard
+    length: 30
+  2:15pm:
+    name: Earth Crisis
+    length: 45
+  3:30pm:
+    name: The Bronx
+    length: 45
+  4:45pm:
+    name: Flogging Molly
+    length: 60
+  6:30pm:
+    name: The Gaslight Anthem
+    length: 60
+
+rebel:
+  12:40pm:
+    name: Through N Through
+    length: 25
+  2:05pm:
+    name: Future Nobodies
+    length: 30
+  3:05pm:
+    name: Fleshwater
+    length: 40
+  4:15pm:
+    name: H20
+    length: 45
+  5:30pm:
+    name: Gorilla Biscuits
+    length: 60
+  7:00pm:
+    name: Godspeed You! Black Emperor
+    length: 45
+
+

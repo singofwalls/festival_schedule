@@ -1,13 +1,14 @@
 text:
   title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Friday Schedule
-  subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule Here</a>
+  subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
+  color: "gainsboro"
 
 stages:
-  riot: "grey"
-  roots: "grey"
-  radical: "grey"
-  rise: "grey"
-  rebel: "grey"
+  riot: "#f1c135"
+  roots: "#f1c135"
+  radical: "#f1c135"
+  rise: "#f1c135"
+  rebel: "#f1c135"
 
 riot:
   12:50pm:
@@ -113,7 +114,7 @@ rebel:
     name: Fake Names
     length: 45
   8:45pm:
-    name: Sludeworth
+    name: Sludgeworth
     length: 60
 
 

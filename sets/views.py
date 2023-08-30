@@ -36,6 +36,7 @@ class Band:
     def __init__(self, name=""):
         self.name = name
         self.position = ""
+        self.period = ""
 
 
 def parse_times(fest_name):
@@ -76,6 +77,7 @@ def parse_times(fest_name):
             bands.append(band["name"].replace(" ", "").strip())
             for i, time_slot in enumerate(slots):
                 times[time_slot][stage].name = band["name"]
+                times[time_slot][stage].period = slots[0].strftime("%I:%M%p") + " - " + (slots[-1] + timedelta(minutes=5)).strftime("%I:%M%p")
                 if i == 0:
                     times[time_slot][stage].position = "bottom"
                 elif i == min(len(slots) - 1, len(slots) // 2 + 1):

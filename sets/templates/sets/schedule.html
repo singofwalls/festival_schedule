@@ -11,6 +11,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     {% load sets_extras %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        *, body{
+            background-color: rgb(27, 21, 26);
+            color: {{ text.color|safe }};
+        }
+
+        .button {
+            color: {{ text.color|safe }};
+            border: 0px;
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -122,7 +134,7 @@
             <div style="width:15%; margin-right: 5px;">
             </div>
             {% for stage, color in stage_colors.items %}
-                <div style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }};">
+                <div class="responsive_text" style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }};">
                     {{ stage }}
                 </div>
             {% endfor %}
@@ -142,7 +154,8 @@
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
                         {% if band.position == "middle" %}
-                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; background: none;  position: absolute; padding: 4px; overflow-y: visible;">{{ band.name }}</span> <span style="position:relative;"></span>
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; ">{{ band.name }}</span> <span style="position:relative;"></span>
+                        {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
                         {% endif %}
                     </div>
                 {% endfor %}

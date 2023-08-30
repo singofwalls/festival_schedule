@@ -1,0 +1,129 @@
+text:
+  title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Saturday Schedule
+  subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
+  color: "gainsboro"
+
+stages:
+  riot: "#009ddb"
+  roots: "#009ddb"
+  radical: "#009ddb"
+  rise: "#009ddb"
+  rebel: "#009ddb"
+
+riot:
+  12:10pm:
+    name: Pool Kids.
+    length: 30
+  1:20pm:
+    name: Warpaint
+    length: 45
+  3:00pm:
+    name: White Reaper
+    length: 45
+  4:40pm:
+    name: Head Automatica
+    length: 60
+  6:50pm:
+    name: Death Cab for Cutie
+    length: 60
+  9:00pm:
+    name: The Postal Service
+    length: 60
+
+roots:
+  12:45pm:
+    name: Enola Gay
+    length: 30
+  2:10pm:
+    name: Jehnny Beth
+    length: 45
+  3:50pm:
+    name: Viagra Boys
+    length: 45
+  5:45pm:
+    name: Death Grips
+    length: 60
+  7:55pm:
+    name: Queens of the Stone Age
+    length: 60
+
+
+radical:
+  12:10pm:
+    name: Cassyette
+    length: 30
+  1:00pm:
+    name: Drain
+    length: 30
+  2:00pm:
+    name: Bowling for Soup
+    length: 30
+  3:00pm:
+    name: Nothing,Nowhere.
+    length: 45
+  4:15pm:
+    name: The Exploited
+    length: 45
+  5:30pm:
+    name: 070 Shake
+    length: 60
+  7:00pm:
+    name: 100 Gecs
+    length: 60
+
+rise:
+  12:00pm:
+    name: Total Chaos
+    length: 30
+  12:55pm:
+    name: Plosivs
+    length: 30
+  1:50pm:
+    name: Snapcase
+    length: 30
+  2:50pm:
+    name: Rival Schools
+    length: 30
+  3:50pm:
+    name: Enter Shikari
+    length: 40
+  5:00pm:
+    name: Frank Turner & the Sleeping Souls
+    length: 40
+  6:10pm:
+    name: Pup
+    length: 45
+  7:25pm:
+    name: Pennywise
+    length: 60
+  8:55pm:
+    name: Mr. Bungle
+    length: 60
+
+rebel:
+  1:15pm:
+    name: 1300cadoe
+    length: 30
+  2:15pm:
+    name: Corey Feldman
+    length: 30
+  3:15pm:
+    name: High Vis
+    length: 30
+  4:10pm:
+    name: Spitalfield
+    length: 30
+  5:05pm:
+    name: Steve Ignorant Band/Crass
+    length: 30
+  6:00pm:
+    name: Eshu Tune
+    length: 45
+  7:15pm:
+    name: Sleep Token
+    length: 45
+  8:30pm:
+    name: Insane Clown Posse
+    length: 60
+
+
