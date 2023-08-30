@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
         *, body{
-            background-color: rgb(27, 21, 26);
+            background-color: {{ text.background }};
             color: {{ text.color|safe }};
         }
 
@@ -50,7 +50,7 @@
             for (let ele of document.getElementsByClassName("band")) {
                 ele.style.borderWidth=1;
                 ele.style.borderColor="darkgrey";
-                ele.style.backgroundColor="rgb(27, 25, 29)";
+                ele.style.backgroundColor="{{ text.background }}";
             }
             for (let band of selected_bands) {
                 for (let ele of document.getElementsByClassName("band_" + band)) {
@@ -134,8 +134,8 @@
             <div style="width:15%; margin-right: 5px;">
             </div>
             {% for stage, color in stage_colors.items %}
-                <div class="responsive_text" style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }};">
-                    {{ stage }}
+                <div class="responsive_text" style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }}; padding: 5px;">
+                    <span style="padding: 4px; margin: 5px; background-color: {{ text.background }}; border-radius: 5px;">{{ stage }}</span>
                 </div>
             {% endfor %}
         </div>
@@ -154,7 +154,7 @@
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
                         {% if band.position == "middle" %}
-                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; ">{{ band.name }}</span> <span style="position:relative;"></span>
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; background: none"><span style="padding: 4px; background-color: {{ text.background }}; border-radius: 5px;">{{ band.name }}</span></span> <span style="position:relative;"></span>
                         {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
                         {% endif %}
                     </div>

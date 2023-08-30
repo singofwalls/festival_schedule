@@ -2,15 +2,16 @@ text:
   title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Saturday Schedule
   subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
   color: "gainsboro"
+  background: "#15192d"
 
 stages:
-  riot: "#009ddb"
-  roots: "#009ddb"
-  radical: "#009ddb"
-  rise: "#009ddb"
-  rebel: "#009ddb"
+  RIOT: "#009ddb"
+  ROOTS: "#009ddb"
+  RADICAL: "#009ddb"
+  RISE: "#009ddb"
+  REBEL: "#009ddb"
 
-riot:
+RIOT:
   12:10pm:
     name: Pool Kids.
     length: 30
@@ -30,7 +31,7 @@ riot:
     name: The Postal Service
     length: 60
 
-roots:
+ROOTS:
   12:45pm:
     name: Enola Gay
     length: 30
@@ -48,7 +49,7 @@ roots:
     length: 60
 
 
-radical:
+RADICAL:
   12:10pm:
     name: Cassyette
     length: 30
@@ -71,7 +72,7 @@ radical:
     name: 100 Gecs
     length: 60
 
-rise:
+RISE:
   12:00pm:
     name: Total Chaos
     length: 30
@@ -100,7 +101,7 @@ rise:
     name: Mr. Bungle
     length: 60
 
-rebel:
+REBEL:
   1:15pm:
     name: 1300cadoe
     length: 30

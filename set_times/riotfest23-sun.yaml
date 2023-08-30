@@ -2,15 +2,16 @@ text:
   title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Sunday Schedule
   subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
   color: "gainsboro"
+  background: "#15192d"
 
 stages:
-  riot: "#f90e46"
-  roots: "#f90e46"
-  radical: "#f90e46"
-  rise: "#f90e46"
-  rebel: "#f90e46"
+  RIOT: "#f90e46"
+  ROOTS: "#f90e46"
+  RADICAL: "#f90e46"
+  RISE: "#f90e46"
+  REBEL: "#f90e46"
 
-riot:
+RIOT:
   12:05pm:
     name: Hotline TNT
     length: 30
@@ -30,7 +31,7 @@ riot:
     name: The Cure
     length: 135
 
-roots:
+ROOTS:
   12:40pm:
     name: Smoking Popes
     length: 30
@@ -48,7 +49,7 @@ roots:
     length: 60
 
 
-radical:
+RADICAL:
   12:00pm:
     name: Free Throw
     length: 30
@@ -71,7 +72,7 @@ radical:
     name: The Used
     length: 60
 
-rise:
+RISE:
   12:15pm:
     name: Fade Em All
     length: 39
@@ -91,7 +92,7 @@ rise:
     name: The Gaslight Anthem
     length: 60
 
-rebel:
+REBEL:
   12:40pm:
     name: Through N Through
     length: 25

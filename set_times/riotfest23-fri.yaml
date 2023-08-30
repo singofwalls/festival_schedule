@@ -2,15 +2,16 @@ text:
   title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Friday Schedule
   subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule</a> | <a href="/riotfest23-fri" class="button">Friday Schedule</a> | <a href="/riotfest23-sat" class="button">Saturday Schedule</a> | <a href="/riotfest23-sun" class="button">Sunday Schedule</a>
   color: "gainsboro"
+  background: "#15192d"
 
 stages:
-  riot: "#f1c135"
-  roots: "#f1c135"
-  radical: "#f1c135"
-  rise: "#f1c135"
-  rebel: "#f1c135"
+  RIOT: "#f1c135"
+  ROOTS: "#f1c135"
+  RADICAL: "#f1c135"
+  RISE: "#f1c135"
+  REBEL: "#f1c135"
 
-riot:
+RIOT:
   12:50pm:
     name: Olivia Jean.
     length: 30
@@ -27,7 +28,7 @@ riot:
     name: Foo Fighters
     length: 120
 
-roots:
+ROOTS:
   12:15pm:
     name: Calva Louise
     length: 30
@@ -45,7 +46,7 @@ roots:
     length: 60
 
 
-radical:
+RADICAL:
   12:00pm:
     name: Young Culture
     length: 30
@@ -68,7 +69,7 @@ radical:
     name: Say Anything
     length: 60
 
-rise:
+RISE:
   12:00pm:
     name: The Aquadolls
     length: 30
@@ -88,7 +89,7 @@ rise:
     name: Tegan And Sara
     length: 60
 
-rebel:
+REBEL:
   12:00pm:
     name: Fea
     length: 30
