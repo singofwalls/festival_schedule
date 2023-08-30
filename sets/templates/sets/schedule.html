@@ -132,6 +132,7 @@
         </div>
         <div class="d-flex flex-row flex-nowrap">
             <div style="width:15%; margin-right: 5px;">
+                &nbsp;
             </div>
             {% for stage, color in stage_colors.items %}
                 <div class="responsive_text" style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }}; padding: 5px;">
@@ -142,7 +143,7 @@
 
         {% for time, stage in times.items %}
             <div class="d-flex flex-row flex-nowrap" style="height: 1.5em;">
-                <div style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap; font-size: smaller">
+                <div class="responsive_text_times" style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap">
                     {{ time|date:'h:i A' }}
                 </div>
                 {% for stage_name, band in stage.items %}
