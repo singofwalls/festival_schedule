@@ -132,24 +132,29 @@
         <div style="text-align: center;">
             Share Link: <a href='javascript:copy_bits()' id="share_link" class="btn button" type="button"></a>
         </div>
-        <div class="d-flex flex-row flex-nowrap">
-            <div style="width:15%; margin-right: 5px;">
+        <div class="row gx-2">
+            <div style="background-origin: padding-box;" class="col-{{ colsize }}">
                 &nbsp;
             </div>
             {% for stage, color in stage_colors.items %}
-                <div class="responsive_text" style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }}; padding: 5px;">
-                    <span style="padding: 4px; margin: 5px; background-color: {{ text.background }}; border-radius: 5px;">{{ stage }}</span>
+                <div class="col-{{ colsize }}">
+                    <div class="responsive_text" style="text-align: center; padding: 5px; background-color: {{ color }};">
+                        <span style="padding: 4px; margin: auto; background-color: {{ text.background }}; border-radius: 5px;">{{ stage }}</span>
+                    </div>
                 </div>
             {% endfor %}
         </div>
 
         {% for time, stage in times.items %}
-            <div class="d-flex flex-row flex-nowrap" style="height: 1.5em;">
-                <div class="responsive_text_times" style="width:15%; margin-right: 5px; text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap">
-                    {{ time|date:'h:i A' }}
+            <div class="row gx-2" style="height: 1.5em;">
+                <div class="col-{{ colsize }}">
+                    <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap">
+                        {{ time|date:'h:i A' }}
+                    </div>
                 </div>
                 {% for stage_name, band in stage.items %}
-                    <div {% if band.name %} class="band band_{{ band.name|cut:' ' }}" {% endif %} data-color="{{ stage_colors|get_item:stage_name }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
+                    <div class="col-{{ colsize }}">
+                    <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible;
                         {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
                         {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
                         {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}
@@ -157,9 +162,11 @@
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
                         {% if band.position == "middle" %}
-                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; background: none"><span style="padding: 4px; background-color: {{ text.background }}; border-radius: 5px;">{{ band.name }}</span></span> <span style="position:relative;"></span>
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; background: none"><span style="width: 100%; padding: 4px; background-color: {{ text.background }}; border-radius: 5px; display: block;">{{ band.name }}</span></span> <span style="position:relative;"></span>
                         {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
                         {% endif %}
+                        &nbsp;
+                    </div>
                     </div>
                 {% endfor %}
             </div>

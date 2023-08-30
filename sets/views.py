@@ -13,6 +13,7 @@ class ScheduleView(TemplateView):
 
         context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw"
         context["times"], context["band_nums"], context["stage_colors"], context["text"] = parse_times(context['fest'])
+        context['colsize'] = 12 // (len(context["stage_colors"]) + 1)
 
         return context
 
