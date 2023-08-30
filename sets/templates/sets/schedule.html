@@ -94,7 +94,9 @@
             }
             for (let band of selected_bands) {
                 let band_num = BigInt(band_nums.indexOf(band));
-                band_bits |= BigInt(2)**band_num;
+                if (band_num > 0) {
+                    band_bits |= BigInt(2)**band_num;
+                }
             }
         }
 
@@ -112,7 +114,7 @@
                     band_bits |= BigInt(2)**i;
                 }
             }
-            document.cookie = "{{fest}}_selected_sets=" + selected_bands + "; path=/";
+            //document.cookie = "{{fest}}_selected_sets=" + selected_bands + "; path=/";
             window.history.replaceState({}, document.title, document.location.pathname);
         }
 
