@@ -7,9 +7,9 @@
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"></script>
     {% load static %}
-    <link rel="shortcut icon" type="image/png" href="{% static 'snw icon.png' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'sets icon.png' %}"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    {% load snw_extras %}
+    {% load sets_extras %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -30,7 +30,7 @@
                 selected_bands.push(band);
                 band_bits |= (BigInt(2)**band_num);
             }
-            document.cookie = "selected_sets=" + selected_bands + "; path=/";
+            document.cookie = "{{fest}}_selected_sets=" + selected_bands + "; path=/";
             refresh_selected();
         }
 
@@ -73,7 +73,7 @@
     </script>
     <script defer>
         // Check cookies
-        let bands = getCookie("selected_sets");
+        let bands = getCookie("{{fest}}_selected_sets");
         if (bands !== null) {
             selected_bands = bands.split(",");
             let ind = selected_bands.indexOf('');
@@ -100,8 +100,8 @@
                     band_bits |= BigInt(2)**i;
                 }
             }
-            document.cookie = "selected_sets=" + selected_bands + "; path=/";
-            window.history.replaceState({}, document.title, "/");
+            document.cookie = "{{fest}}_selected_sets=" + selected_bands + "; path=/";
+            window.history.replaceState({}, document.title, document.location.pathname);
         }
 
         setTimeout(refresh_selected, 10);
@@ -121,7 +121,7 @@
         <div class="d-flex flex-row flex-nowrap">
             <div style="width:15%; margin-right: 5px;">
             </div>
-            {% for stage, color in stages.items %}
+            {% for stage, color in stage_colors.items %}
                 <div style="width:20%; margin-right: 10px; text-align: center; background-color: {{ color }};">
                     {{ stage }}
                 </div>
@@ -134,7 +134,7 @@
                     {{ time|date:'h:i A' }}
                 </div>
                 {% for stage_name, band in stage.items %}
-                    <div {% if band.name %} class="band band_{{ band.name|cut:' ' }}" {% endif %} data-color="{{ stages|get_item:stage_name }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
+                    <div {% if band.name %} class="band band_{{ band.name|cut:' ' }}" {% endif %} data-color="{{ stage_colors|get_item:stage_name }}" style="width:20%; position: relative; word-break: break-word; overflow-y: visible; margin-right: 10px;
                         {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
                         {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
                         {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}

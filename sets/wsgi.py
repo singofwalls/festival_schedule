@@ -1,5 +1,5 @@
 """
-WSGI config for snw project.
+WSGI config for sets project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -15,11 +15,11 @@ import site
 
 site.addsitedir("../.venv/lib/python3.10/site-packages")
 
-import snw.monitor as monitor
+import sets.monitor as monitor
 
 monitor.start(interval=1.0)
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'snw.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sets.settings')
 
 if settings.DEBUG:
     import debugpy

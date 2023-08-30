@@ -1,0 +1,115 @@
+stages:
+  riot: "grey"
+  roots: "grey"
+  radical: "grey"
+  rise: "grey"
+  rebel: "grey"
+
+riot:
+  12:50pm:
+    name: Olivia Jean.
+    length: 30
+  2:15pm:
+    name: Yard Act
+    length: 45
+  3:55pm:
+    name: The Interrupters
+    length: 45
+  5:50pm:
+    name: The Breeders
+    length: 60
+  8:00pm:
+    name: Foo Fighters
+    length: 120
+
+roots:
+  12:15pm:
+    name: Calva Louise
+    length: 30
+  1:25pm:
+    name: Quasi
+    length: 45
+  3:05pm:
+    name: Code Orange
+    length: 45
+  4:45pm:
+    name: Quicksand
+    length: 60
+  6:55pm:
+    name: Turnstile
+    length: 60
+
+
+radical:
+  12:00pm:
+    name: Young Culture
+    length: 30
+  12:50pm:
+    name: Origami Angel
+    length: 30
+  1:40pm:
+    name: Hawthorne Heights
+    length: 30
+  2:30pm:
+    name: The Wrecks
+    length: 30
+  3:30pm:
+    name: Silverstein
+    length: 45
+  4:45pm:
+    name: Bayside
+    length: 45
+  6:00pm:
+    name: Say Anything
+    length: 60
+
+rise:
+  12:00pm:
+    name: The Aquadolls
+    length: 30
+  12:50pm:
+    name: Pinkshift
+    length: 30
+  1:50pm:
+    name: Parliament Funkadelic
+    length: 60
+  3:20pm:
+    name: Kim Gordon
+    length: 60
+  5:00pm:
+    name: Ani Difranco
+    length: 60
+  7:00pm:
+    name: Tegan And Sara
+    length: 60
+
+rebel:
+  12:00pm:
+    name: Fea
+    length: 30
+  12:55pm:
+    name: The Bobby Lees
+    length: 30
+  1:50pm:
+    name: Bearings
+    length: 30
+  2:45pm:
+    name: Oso Oso
+    length: 30
+  3:45pm:
+    name: Just Friends
+    length: 30
+  4:50pm:
+    name: Screaming Females
+    length: 40
+  6:00pm:
+    name: Braid
+    length: 60
+  7:30pm:
+    name: Fake Names
+    length: 45
+  8:45pm:
+    name: Sludeworth
+    length: 60
+
+
