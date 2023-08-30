@@ -1,3 +1,7 @@
+text:
+  title: <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
+  subtitle: Set end-times are eyeballed off of the <a href="https://www.sicknewworldfest.com/" class="button">official schedule</a>
+
 stages:
   purple: "rgb(101, 4, 150)"
   green: "rgb(10, 95, 7)"

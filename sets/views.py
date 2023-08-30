@@ -12,7 +12,7 @@ class ScheduleView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw"
-        context["times"], context["band_nums"], context["stage_colors"] = parse_times(context['fest'])
+        context["times"], context["band_nums"], context["stage_colors"], context["text"] = parse_times(context['fest'])
 
         return context
 
@@ -43,7 +43,7 @@ def parse_times(fest_name):
         with open(BASE_DIR / "set_times" / f"{fest_name}.yaml") as f:
             set_times = load(f, Loader)
     except Exception:
-        return {}, {}, {}
+        return {}, {}, {}, {"title": "Not Found", "subtitle": ""}
 
     stages = set_times["stages"]
 
@@ -53,7 +53,7 @@ def parse_times(fest_name):
     earliest_time = None
     latest_time = None
     for stage, sets in set_times.items():
-        if stage == "stages":
+        if stage in ("stages", "text"):
             continue
         for time in sets:
             length = sets[time]["length"]
@@ -68,7 +68,7 @@ def parse_times(fest_name):
 
     times = {t: {stage: Band() for stage in stages} for t in list(gen_times(earliest_time.time(), end_time=latest_time.time()))[::-1]}
     for stage, sets in set_times.items():
-        if stage == "stages":
+        if stage in ("stages", "text"):
             continue
         for time, band in sets.items():
             time = datetime.strptime(time, "%I:%M%p").time()
@@ -83,4 +83,4 @@ def parse_times(fest_name):
                 elif i == len(slots) - 1:
                     times[time_slot][stage].position = "top"
 
-    return times, bands, stages
+    return times, bands, stages, set_times["text"]

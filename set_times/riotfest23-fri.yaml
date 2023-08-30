@@ -1,3 +1,7 @@
+text:
+  title: <span style="font-size:smaller">(Unofficial)</span> Riot Fest 2023 Friday Schedule
+  subtitle: <a href="https://riotfest.org/2023/08/30/the-daily-schedule-is-here/" class="button">Official Schedule Here</a>
+
 stages:
   riot: "grey"
   roots: "grey"

@@ -111,9 +111,9 @@
     </div>
     <div class="container" style="flex-flow: row wrap; margin-top: 20px">
         <h5 class="card-title display-5">
-            <span style="font-size:smaller">(Unofficial)</span> Sick New World Schedule
+            {{ text.title|safe }}
         </h5>
-        Set end-times are eyeballed off of the <a href="https://www.sicknewworldfest.com/" class="button">official schedule</a>
+        {{ text.subtitle|safe }}
         <br>
         <div style="text-align: center;">
             Share Link: <a href='javascript:copy_bits()' id="share_link" class="btn button" type="button"></a>
