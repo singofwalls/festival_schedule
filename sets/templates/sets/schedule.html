@@ -147,17 +147,17 @@
 
         {% for time, stage in times.items %}
             <div class="row gx-2" style="height: 1.5em;">
-                <div class="col-{{ colsize }}">
+                <div class="col-{{ colsize }}" style="height: 100%">
                     <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap">
                         {{ time|date:'h:i A' }}
                     </div>
                 </div>
                 {% for stage_name, band in stage.items %}
-                    <div class="col-{{ colsize }}">
-                    <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible;
+                    <div class="col-{{ colsize }}" style="height: 100%">
+                    <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible; height: 100%;
                         {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
                         {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
-                        {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; {% endif %}
+                        {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; padding-bottom: 2px; {% endif %}
                         "
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
