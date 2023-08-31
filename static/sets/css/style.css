@@ -1,8 +1,17 @@
 .responsive_text {
-    font-size: 1.35vw;
+    font-size: 1.10vw;
 }
 .responsive_text_times {
-    font-size: 1vw;
+    font-size: .75vw;
+}
+
+@media only screen and (max-width: 1081px) {
+    .responsive_text {
+        font-size: 1.35vw;
+    }
+    .responsive_text_times {
+        font-size: 1vw;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
