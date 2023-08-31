@@ -6,6 +6,7 @@ from sets.settings import BASE_DIR, STATIC_ROOT
 from datetime import time, timedelta, datetime
 import os
 from html2image import Html2Image
+from PIL import Image
 
 
 class ScheduleView(TemplateView):
@@ -47,6 +48,9 @@ def generate_preview(request, fest):
     hti.screenshot(url=url, save_as=path.name)
 
     try:
+        with Image.open(path) as im:
+            im_crop = im.crop((300, 0, 1620, 1080))
+        im_crop.save(path)
         with open(path, "rb") as f:
             return HttpResponse(f.read(), content_type="image/jpeg")
     except FileNotFoundError:
