@@ -1,7 +1,11 @@
 from django.views.generic import TemplateView
+from django.http import HttpResponse
 from yaml import load, Loader
-from sets.settings import BASE_DIR
+from pathlib import Path
+from sets.settings import BASE_DIR, STATIC_ROOT
 from datetime import time, timedelta, datetime
+import os
+from html2image import Html2Image
 
 
 class ScheduleView(TemplateView):
@@ -14,9 +18,39 @@ class ScheduleView(TemplateView):
         context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw"
         context["times"], context["band_nums"], context["stage_colors"], context["text"] = parse_times(context['fest'])
         context['colsize'] = 12 // (len(context["stage_colors"]) + 1)
-        context['preview_image'] = f"{context['fest']}.jpg"
+
+        bands = self.request.GET.get("bands", 0)
+        context["preview_image"] = f"/{context['fest']}/preview?bands={bands}"
+
 
         return context
+
+
+def generate_preview(request, fest):
+    """Take a screenshot of the webpage and save it to an image."""
+    bands = request.GET.get("bands")
+    if bands is None:
+        bands = 0
+
+    path = STATIC_ROOT / Path(f"sets/previews/{fest}/{bands}.jpg")
+    os.makedirs(path.parent, exist_ok=True)
+
+    try:
+        with open(path, "rb") as f:
+            return HttpResponse(f.read(), content_type="image/jpeg")
+    except FileNotFoundError:
+        pass
+
+    # Generate preview
+    hti = Html2Image(output_path=str(path.parent))
+    url = request.build_absolute_uri().replace("/preview", "")
+    hti.screenshot(url=url, save_as=path.name)
+
+    try:
+        with open(path, "rb") as f:
+            return HttpResponse(f.read(), content_type="image/jpeg")
+    except FileNotFoundError:
+        return None
 
 
 def gen_times(start_time, length=None, end_time=None):
