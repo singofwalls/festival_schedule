@@ -1,0 +1,72 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'sets icon.png' %}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <meta property="og:title" content="Festival Set Planner" />
+    <meta property="og:description" content="Pick bands you want to see" />
+    <meta property="og:image" content="/riotfest23-sat/preview?bands=17180000288" />
+    <title>Unofficial {{ text.title }}</title>
+
+    <style>
+        body  {
+            background-color: #282b34;
+            color: gainsboro;
+            border: 0px;
+        }
+        div .dark {
+            background-color: #282b34;
+            height: 100%;
+            display: block;
+            color: gainsboro;
+            border-radius: 0px 5px 5px 0px;
+        }
+        .card {
+            background-color: #353e46;
+            padding: 5px;
+        }
+        a, a:visited {
+            color: gainsboro;
+            text-decoration: none;
+        }
+        a:hover {
+            color: grey;
+        }
+        .col, .col-md-8, .col-md-4 {
+            height: auto;
+        }
+    </style>
+</head>
+<br>
+<div class="container">
+    <div class="row justify-content-md-center gy-2">
+        <h1 style="margin: 0px;">Reece's Festival Set Planner</h1>
+        <a href="https://shows.pericarpal.com" style="margin: 0px;">→ Concert Tracker and Blog</a>
+        <br>
+        <br>
+        {% for fest_name, fest_id in fests %}
+            <div class="col-md-6">
+                <div class="card text-light">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="/{{ fest_id }}/preview" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body dark">
+                            <span class="card-title-span"><h5 class="card-title"><a class='stretched-link' href="/{{ fest_id }}">{{ fest_name }}</a></h5></span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

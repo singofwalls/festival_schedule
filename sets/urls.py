@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from sets.views import ScheduleView, generate_preview
+from sets.views import ScheduleView, HomeView, generate_preview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<fest>', ScheduleView.as_view()),
     path('<fest>/preview', generate_preview),
-    path('', ScheduleView.as_view()),
+    path('', HomeView.as_view()),
 ]

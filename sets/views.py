@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from yaml import load, Loader
 from pathlib import Path
 from sets.settings import BASE_DIR, STATIC_ROOT
@@ -9,6 +9,26 @@ from html2image import Html2Image
 from PIL import Image
 
 
+
+class HomeView(TemplateView):
+
+    template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        fests = []
+        for fest in os.listdir(BASE_DIR / "set_times"):
+            if fest.endswith(".yaml"):
+                with open(BASE_DIR / 'set_times' / fest) as f:
+                    set_times = load(f, Loader)
+                    fest_name = set_times["text"]["title"]
+                    fest_id = fest.removesuffix(".yaml")
+                    fests.append((fest_name, fest_id))
+
+        context['fests'] = sorted(fests, key=lambda f: f[0])
+        return context
+
+
 class ScheduleView(TemplateView):
 
     template_name = "schedule.html"
@@ -16,13 +36,12 @@ class ScheduleView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw"
+        context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw23"
         context["times"], context["band_nums"], context["stage_colors"], context["text"] = parse_times(context['fest'])
         context['colsize'] = 12 // (len(context["stage_colors"]) + 1)
 
         bands = self.request.GET.get("bands", 0)
         context["preview_image"] = f"/{context['fest']}/preview?bands={bands}"
-
 
         return context
 

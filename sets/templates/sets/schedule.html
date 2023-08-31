@@ -30,6 +30,7 @@
 </head>
 <body>
     <script>
+        {% if not times %} window.location.replace("/"); {% endif %}
         let selected_bands = [];
         let band_bits = BigInt(0);
         let band_nums = {{ band_nums|safe }};
