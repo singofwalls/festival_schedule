@@ -1,0 +1,22 @@
+services:
+  sets:
+    container_name: sets
+    build:
+      context: .
+    networks:
+      - traefik_default
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_default
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=sets.settings
+    volumes:
+      - static:/var/www/static/sets/previews
+
+networks:
+  traefik_default:
+    external: true
+
+volumes:
+  static:

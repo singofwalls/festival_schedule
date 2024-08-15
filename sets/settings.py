@@ -26,10 +26,14 @@ with open(BASE_DIR / "django_key.txt") as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://sets-dev.rabbitfrost.com',
+    'https://sets.rabbitfrost.com',
+]
 
 ALLOWED_HOSTS = [
-    "sets-dev.pericarpal.com",
-    "sets.pericarpal.com"
+    "sets-dev.rabbitfrost.com",
+    "sets.rabbitfrost.com"
 ]
 
 

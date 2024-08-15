@@ -21,6 +21,7 @@ from sets.views import ScheduleView, HomeView, generate_preview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<fest>', ScheduleView.as_view()),
+    path('<fest>/', ScheduleView.as_view()),
     path('<fest>/preview', generate_preview),
     path('', HomeView.as_view()),
 ]

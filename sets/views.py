@@ -62,7 +62,8 @@ def generate_preview(request, fest):
         pass
 
     # Generate preview
-    hti = Html2Image(output_path=str(path.parent))
+    hti = Html2Image(output_path=str(path.parent), custom_flags=['--no-sandbox'])
+    hti.browser_executable = "/opt/google/chrome/google-chrome"
     url = request.build_absolute_uri().replace("/preview", "")
     hti.screenshot(url=url, save_as=path.name)
 
@@ -73,7 +74,7 @@ def generate_preview(request, fest):
         with open(path, "rb") as f:
             return HttpResponse(f.read(), content_type="image/jpeg")
     except FileNotFoundError:
-        return None
+        raise
 
 
 def gen_times(start_time, length=None, end_time=None):
