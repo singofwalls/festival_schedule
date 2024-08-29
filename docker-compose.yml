@@ -13,6 +13,7 @@ services:
       - DJANGO_SETTINGS_MODULE=sets.settings
     volumes:
       - static:/var/www/static/sets/previews
+      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
 
 networks:
   traefik_default:
