@@ -1,5 +1,8 @@
 FROM httpd:latest AS base
 
+ENV XDG_CONFIG_HOME=/tmp/.chromium
+ENV XDG_CACHE_HOME=/tmp/.chromium
+
 RUN apt-get update
 RUN apt-get install -y tzdata
 RUN ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
@@ -16,6 +19,11 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 # expected to error (fixed with fix broken):
 RUN dpkg -i google-chrome-stable_current_amd64.deb; exit 0
 RUN apt-get --fix-broken install -y
+RUN mkdir -p /var/www/.local/share/applications/
+RUN mkdir -p /tmp/.chromium
+RUN chown -R www-data /var/www/.local/share/applications/
+RUN chown -R www-data /var/www/.local
+RUN chown -R www-data /tmp/.chromium
 
 FROM base AS packages
 WORKDIR /app
