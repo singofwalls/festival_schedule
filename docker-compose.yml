@@ -1,6 +1,7 @@
 services:
   sets:
     container_name: sets
+    restart: unless-stopped
     build:
       context: .
     networks:
