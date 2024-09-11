@@ -1,0 +1,103 @@
+text:
+  title: Furnace Fest 2024 Friday Schedule
+  subtitle: <a href="https://x.com/FurnaceFest/status/1833934128485675131/photo/1" class="button">Official Schedule</a> | <a href="/furnace24-fri" class="button">Friday Schedule</a> | <a href="/furnace24-sat" class="button">Saturday Schedule</a> | <a href="/furnace24-sun" class="button">Sunday Schedule</a>
+  color: "#a8a490"
+  background: "#212121"
+
+stages:
+  POND: "#a8a490"
+  SHED: "#a8a490"
+  MAIN: "#a8a490"
+
+POND:
+  1:15pm:
+    name: Double Tap
+    length: 30
+  2:00pm:
+    name: Penny Circus
+    length: 35
+  2:45pm:
+    name: Michael Cera Palin
+    length: 35
+  3:35pm:
+    name: Slow Joy
+    length: 35
+  4:25pm:
+    name: Saturday's At Your Place
+    length: 35
+  5:15pm:
+    name: Oso Oso
+    length: 40
+  6:10pm:
+    name: Glitterer
+    length: 40
+  7:10pm:
+    name: Tiny Moving Parts
+    length: 45
+  8:15pm:
+    name: Free Throw
+    length: 50
+
+SHED:
+  12:00pm:
+    name: Twisted Luck
+    length: 25
+  12:40pm:
+    name: Nygma
+    length: 25
+  1:20pm:
+    name: 156/Silence
+    length: 30
+  2:05pm:
+    name: Bury Your Dead
+    length: 35
+  2:55pm:
+    name: Bleeding Through
+    length: 40
+  3:50pm:
+    name: He Is Legend
+    length: 40
+  4:45pm:
+    name: Emery
+    length: 40
+  5:40pm:
+    name: Unearth
+    length: 40
+  6:40pm:
+    name: Better Lovers
+    length: 45
+  7:45pm:
+    name: Bane
+    length: 45
+  8:50pm:
+    name: Coalesce
+    length: 50
+
+MAIN:
+  1:25pm:
+    name: From a Second Story Window
+    length: 35
+  2:15pm:
+    name: Dying Wish
+    length: 35
+  3:05pm:
+    name: Oh Sleeper
+    length: 40
+  4:05pm:
+    name: Full of Hell
+    length: 45
+  5:10pm:
+    name: Silent Planet
+    length: 45
+  6:15pm:
+    name: Haste the Day
+    length: 45
+  7:20pm:
+    name: The Devil Wears Prada
+    length: 45
+  8:25pm:
+    name: Silverstein
+    length: 50
+  9:45pm:
+    name: August Burns Red
+    length: 70

@@ -1,0 +1,103 @@
+text:
+  title: Furnace Fest 2024 Saturday Schedule
+  subtitle: <a href="https://x.com/FurnaceFest/status/1833934128485675131/photo/2" class="button">Official Schedule</a> | <a href="/furnace24-fri" class="button">Friday Schedule</a> | <a href="/furnace24-sat" class="button">Saturday Schedule</a> | <a href="/furnace24-sun" class="button">Sunday Schedule</a>
+  color: "#796242"
+  background: "#212121"
+
+stages:
+  POND: "#796242"
+  SHED: "#796242"
+  MAIN: "#796242"
+
+POND:
+  1:15pm:
+    name: Greyhaven
+    length: 30
+  2:00pm:
+    name: Delta Hate
+    length: 30
+  2:45pm:
+    name: Valley of Doves
+    length: 35
+  3:35pm:
+    name: Silent Drive
+    length: 35
+  4:25pm:
+    name: Be Well
+    length: 35
+  5:15pm:
+    name: Catch 22
+    length: 40
+  6:10pm:
+    name: Noise Ratchet
+    length: 40
+  7:10pm:
+    name: Slick Shoes
+    length: 45
+  8:15pm:
+    name: Five Iron Frenzy
+    length: 50
+
+SHED:
+  12:00pm:
+    name: Commodity
+    length: 25
+  12:40pm:
+    name: Idle Threat
+    length: 25
+  1:20pm:
+    name: Evergreen Terrace
+    length: 30
+  2:05pm:
+    name: Skycamefalling
+    length: 35
+  2:55pm:
+    name: Misery Signals
+    length: 40
+  3:50pm:
+    name: Shai Hulud
+    length: 40
+  4:45pm:
+    name: Pain of Truth
+    length: 40
+  5:40pm:
+    name: Snapcase
+    length: 40
+  6:40pm:
+    name: No Innocent Victim
+    length: 45
+  7:45pm:
+    name: Stretch Arm Strong
+    length: 45
+  8:50pm:
+    name: Poison the Well
+    length: 50
+
+MAIN:
+  1:25pm:
+    name: My Epic
+    length: 35
+  2:15pm:
+    name: Unity TX
+    length: 35
+  3:05pm:
+    name: The Fall of Troy
+    length: 40
+  4:05pm:
+    name: Hail The Sun
+    length: 45
+  5:10pm:
+    name: L.S. Dunes
+    length: 45
+  6:15pm:
+    name: Show Me The Body
+    length: 45
+  7:20pm:
+    name: The Bled
+    length: 45
+  8:25pm:
+    name: Saosin
+    length: 50
+  9:45pm:
+    name: Coheed and Cambria
+    length: 90

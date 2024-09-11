@@ -1,0 +1,103 @@
+text:
+  title: Furnace Fest 2024 Sunday Schedule
+  subtitle: <a href="https://x.com/FurnaceFest/status/1833934128485675131/photo/3" class="button">Official Schedule</a> | <a href="/furnace24-fri" class="button">Friday Schedule</a> | <a href="/furnace24-sat" class="button">Saturday Schedule</a> | <a href="/furnace24-sun" class="button">Sunday Schedule</a>
+  color: "#86837a"
+  background: "#212121"
+
+stages:
+  POND: "#86837a"
+  SHED: "#86837a"
+  MAIN: "#86837a"
+
+POND:
+  1:15pm:
+    name: All In
+    length: 30
+  2:00pm:
+    name: Not Waving But Drowning
+    length: 30
+  2:45pm:
+    name: Codeseven
+    length: 35
+  3:35pm:
+    name: The Beautiful Mistake
+    length: 35
+  4:25pm:
+    name: Dogwood
+    length: 35
+  5:15pm:
+    name: Anxious
+    length: 40
+  6:10pm:
+    name: The Juliana Theory
+    length: 40
+  7:10pm:
+    name: The Early November
+    length: 45
+  8:15pm:
+    name: Reggie & The Full Effect
+    length: 50
+
+SHED:
+  12:00pm:
+    name: Cold Hard Steel
+    length: 25
+  12:40pm:
+    name: Ends of Sanity
+    length: 25
+  1:20pm:
+    name: One Step Closer
+    length: 30
+  2:05pm:
+    name: Magnitude
+    length: 35
+  2:55pm:
+    name: Incendiary
+    length: 40
+  3:50pm:
+    name: Mindforce
+    length: 40
+  4:45pm:
+    name: Drug Church
+    length: 40
+  5:40pm:
+    name: H2O
+    length: 40
+  6:40pm:
+    name: Comeback Kid
+    length: 45
+  7:45pm:
+    name: No Pressure
+    length: 45
+  8:50pm:
+    name: Trapped Under Ice
+    length: 50
+
+MAIN:
+  1:25pm:
+    name: "'68"
+    length: 35
+  2:15pm:
+    name: Static Dress
+    length: 35
+  3:05pm:
+    name: The Showdown
+    length: 40
+  4:05pm:
+    name: Eighteen Visions
+    length: 45
+  5:10pm:
+    name: Boys Night Out
+    length: 45
+  6:15pm:
+    name: Extol
+    length: 45
+  7:20pm:
+    name: Norma Jean
+    length: 45
+  8:25pm:
+    name: Blindside
+    length: 50
+  9:45pm:
+    name: Underoath
+    length: 70
