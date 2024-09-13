@@ -49,13 +49,13 @@
         function refresh_selected() {
             for (let ele of document.getElementsByClassName("band")) {
                 ele.style.borderWidth=1;
-                ele.style.borderColor="darkgrey";
+                ele.style.borderColor="{{ text.lines }}";
                 ele.style.backgroundColor="{{ text.background }}";
             }
             for (let band of selected_bands) {
                 for (let ele of document.getElementsByClassName("band_" + band)) {
                     ele.style.borderWidth=3;
-                    ele.style.borderColor="white";
+                    ele.style.borderColor="{{ text.selection }}";
                     ele.style.backgroundColor=ele.dataset.color;
                 }
             }
@@ -121,7 +121,7 @@
         setTimeout(refresh_selected, 10);
     </script>
     <div class="toast shadow-none" id="copy_toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000" style="position: fixed; right: 10%; top: 10%; border: 0px; text-align: center; z-index: 10000; width: 15em;">
-        <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid darkgrey; border-radius: 5px;">Copied to Clipboard</div>
+        <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid {{ text.lines }}; border-radius: 5px;">Copied to Clipboard</div>
     </div>
     <div class="container" style="flex-flow: row wrap; margin-top: 20px">
         <h5 class="card-title display-5">
@@ -149,21 +149,21 @@
         {% for time, stage in times.items %}
             <div class="row gx-1" style="height: 1.5em;">
                 <div class="col-{{ colsize }}" style="height: 100%">
-                    <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted darkgrey; overflow: visible; word-break: keep-all; white-space: nowrap">
+                    <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted {{ text.lines }}; overflow: visible; word-break: keep-all; white-space: nowrap">
                         {{ time|date:'h:i A' }}
                     </div>
                 </div>
                 {% for stage_name, band in stage.items %}
                     <div class="col-{{ colsize }}" style="height: 100%">
                     <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible; height: 100%;
-                        {% if band.name %} cursor:pointer; border-left: 1px solid darkgrey; border-right: 1px solid darkgrey; {% else %} border-top: 1px dotted darkgrey;  {% endif %}
-                        {% if band.position == "top" %} border-top: 1px solid darkgrey; {% endif %}
-                        {% if band.position == "bottom" %} border-bottom: 1px solid darkgrey; padding-bottom: 2px; {% endif %}
+                        {% if band.name %} cursor:pointer; border-left: 1px solid {{ text.lines }}; border-right: 1px solid {{ text.lines }}; {% else %} border-top: 1px dotted {{ text.lines }};  {% endif %}
+                        {% if "top" in band.position %} border-top: 1px solid {{ text.lines }}; {% endif %}
+                        {% if "bottom" in band.position %} border-bottom: 1px solid {{ text.lines }};{% endif %}
                         "
                         {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
                         >
                         {% if band.position == "middle" %}
-                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; background: none; word-break:normal;"><span style="width: 100%; padding: 4px; background-color: {{ text.background }}; border-radius: 5px; display: block;">{{ band.name }}</span></span> <span style="position:relative;"></span>
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 4px; overflow-y: visible; background: none; word-break:normal;"><span style="padding: 4px; background-color: {{ text.background }}; border-radius: 5px;">{{ band.name }}</span></span> <span style="position:relative;"></span>
                         {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
                         {% endif %}
                         &nbsp;

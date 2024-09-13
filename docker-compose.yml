@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     build:
       context: .
+    ports:
+      - 65078:65078
     networks:
       - traefik_default
     labels:

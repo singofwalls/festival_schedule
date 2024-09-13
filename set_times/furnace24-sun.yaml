@@ -3,6 +3,8 @@ text:
   subtitle: <a href="https://x.com/FurnaceFest/status/1833934128485675131/photo/3" class="button">Official Schedule</a> | <a href="/furnace24-fri" class="button">Friday Schedule</a> | <a href="/furnace24-sat" class="button">Saturday Schedule</a> | <a href="/furnace24-sun" class="button">Sunday Schedule</a>
   color: "#86837a"
   background: "#212121"
+  lines: darkgrey
+  selection: "#a8a490"
 
 stages:
   POND: "#86837a"

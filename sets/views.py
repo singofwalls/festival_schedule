@@ -140,7 +140,7 @@ def parse_times(fest_name):
                 times[time_slot][stage].period = slots[0].strftime("%I:%M%p") + " - " + (slots[-1] + timedelta(minutes=5)).strftime("%I:%M%p")
                 if i == 0:
                     times[time_slot][stage].position = "bottom"
-                elif i == min(len(slots) - 1, len(slots) // 2 + 1):
+                elif i == min(len(slots) - 2, len(slots) // 2 + 1):
                     times[time_slot][stage].position = "middle"
                 elif i == len(slots) - 1:
                     times[time_slot][stage].position = "top"

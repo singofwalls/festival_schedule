@@ -3,6 +3,8 @@ text:
   subtitle: Set end-times are eyeballed off of the <a href="https://www.sicknewworldfest.com/" class="button">official schedule</a>
   color: "rgb(205, 206, 136)"
   background: "rgb(27, 25, 29)"
+  lines: darkgrey
+  selection: darkgrey
 
 stages:
   purple: "rgb(101, 4, 150)"

@@ -1,0 +1,87 @@
+text:
+  title: Fuchsia Fest 2024 Schedule
+  subtitle: <a href="https://www.instagram.com/p/C_V94sFuKyY/?img_index=1" class="button">Official Schedule</a>
+  color: black
+  background: "#cac6a7"
+  lines: "#8c7d98"
+  selection: "#8c7d98"
+
+stages:
+  STAGE1: "#664a4c"
+  STAGE2: "#664a4c"
+
+STAGE1:
+  2:00pm:
+    name: Kujo
+    length: 35
+  2:40pm:
+    name: Sluice
+    length: 35
+  3:20pm:
+    name: The Commoners
+    length: 35
+  4:00pm:
+    name: Emily How
+    length: 40
+  4:45pm:
+    name: Shatterhand
+    length: 15
+  5:05pm:
+    name: Intermission
+    length: 15
+  5:25pm:
+    name: Early Mourning
+    length: 50
+  6:20pm:
+    name: Amblare
+    length: 30
+  6:55pm:
+    name: ???
+    length: 30
+  7:30pm:
+    name: Faerie Ring
+    length: 45
+  8:20pm:
+    name: Siilk
+    length: 45
+  9:10pm:
+    name: A Modest Proposal
+    length: 45
+  10:00pm:
+    name: Better Off
+    length: 45
+
+STAGE2:
+  2:20pm:
+    name: ASF
+    length: 35
+  3:00pm:
+    name: Jonah & The Well
+    length: 35
+  3:40pm:
+    name: Loralye
+    length: 40
+  4:25pm:
+    name: Cypress Avenue
+    length: 35
+  5:05pm:
+    name: Intermission
+    length: 35
+  5:45pm:
+    name: Discern
+    length: 55
+  6:45pm:
+    name: ????
+    length: 15
+  7:05pm:
+    name: Field Note
+    length: 45
+  7:55pm:
+    name: 12th House Sun
+    length: 45
+  8:45pm:
+    name: Sign Language
+    length: 45
+  9:35pm:
+    name: Demo Division
+    length: 45
