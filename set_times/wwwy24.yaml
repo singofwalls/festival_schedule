@@ -1,10 +1,11 @@
 text:
-  title: When We Were Young Fest 2025 Schedule
+  title: When We Were Young Fest 2024 Schedule
   subtitle: <a href="https://x.com/WWWYFest/status/1845902567374463344" class="button">Official Schedule</a>
   color: "#ffffff"
-  background: "#312f30"
+  set_background: "#7ab855"
+  background: "#202020"
   lines: darkgray
-  selection: "#ffffff"
+  selection: "gainsboro"
 
 settings:
   change_time: 10
@@ -123,7 +124,7 @@ Verizon:
   12:00pm:
     name: Millionaires
   12:25pm:
-    name: The Red Jumpsuit Aparatus
+    name: The Red Jumpsuit Apparatus
   1:10pm:
     name: We are the in Crowd
   1:50pm:

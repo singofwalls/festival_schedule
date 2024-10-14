@@ -38,6 +38,7 @@ class ScheduleView(TemplateView):
         context['fest'] = kwargs["fest"] if "fest" in kwargs else "snw23"
         context["times"], context["band_nums"], context["stage_colors"], context["text"] = parse_times(context['fest'])
         context['colsize'] = 12 // (len(context["stage_colors"]) + 1)
+        context["text"]['set_background'] = context["text"].get("set_background", context["text"]["background"])
 
         bands = self.request.GET.get("bands", 0)
         context["preview_image"] = f"/{context['fest']}/preview?bands={bands}"
