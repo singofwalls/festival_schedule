@@ -2,6 +2,29 @@ services:
   sets:
     container_name: sets
     restart: unless-stopped
+    profiles:
+      - prod
+    build:
+      context: .
+    # ports:
+    #   - 65078:65078
+    networks:
+      - traefik_default
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_default
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=sets.settings
+    volumes:
+      - static:/var/www/static/sets/previews
+      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
+
+  sets_dev:
+    container_name: sets_dev
+    restart: unless-stopped
+    profiles:
+      - dev
     build:
       context: .
     ports:

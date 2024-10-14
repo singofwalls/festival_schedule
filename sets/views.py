@@ -9,7 +9,6 @@ from html2image import Html2Image
 from PIL import Image
 
 
-
 class HomeView(TemplateView):
 
     template_name = "home.html"
@@ -99,6 +98,37 @@ class Band:
         self.period = ""
 
 
+def get_length(set_times, stage: str, time: str, length=None):
+    """Get the length of this set if it's not specified"""
+    import debugpy
+    debugpy.debug_this_thread()
+
+    if length is not None:
+        return length
+
+    sets = set_times[stage]
+
+    change_time = set_times.get("settings", {}).get("change_time", 0)
+    linked_stages = set_times.get("settings", {}).get("linked_stages", [])
+
+    all_times = set(sets)
+    for link in linked_stages:
+        if stage in link:
+            change_time = 0  # alternating stages don't usually have a change time
+            for linked_stage in link:
+                all_times |= set(set_times[linked_stage])
+
+    times = sorted(all_times, key=lambda x: datetime.strptime(x, "%I:%M%p"))
+
+    for this_time, next_time in zip(times, times[1:]):
+        if this_time != time:
+            continue
+
+        return (datetime.strptime(next_time, "%I:%M%p") - datetime.strptime(this_time, "%I:%M%p")).total_seconds() // 60 - change_time
+
+    return 60  # no bands play after this one, default to one hour
+
+
 def parse_times(fest_name):
     try:
         with open(BASE_DIR / "set_times" / f"{fest_name}.yaml") as f:
@@ -114,10 +144,10 @@ def parse_times(fest_name):
     earliest_time = None
     latest_time = None
     for stage, sets in set_times.items():
-        if stage in ("stages", "text"):
+        if stage in ("stages", "text", "settings"):
             continue
         for time in sets:
-            length = sets[time]["length"]
+            length = get_length(set_times, stage, time, sets[time].get('length', None))
             time = datetime.strptime(time, "%I:%M%p")
             earliest_time = time if earliest_time is None else min(earliest_time, time)
             time = time + timedelta(minutes=length)
@@ -129,11 +159,11 @@ def parse_times(fest_name):
 
     times = {t: {stage: Band() for stage in stages} for t in list(gen_times(earliest_time.time(), end_time=latest_time.time()))[::-1]}
     for stage, sets in set_times.items():
-        if stage in ("stages", "text"):
+        if stage in ("stages", "text", "settings"):
             continue
-        for time, band in sets.items():
-            time = datetime.strptime(time, "%I:%M%p").time()
-            slots = list(gen_times(time, band["length"]))
+        for time_str, band in sets.items():
+            time = datetime.strptime(time_str, "%I:%M%p").time()
+            slots = list(gen_times(time, get_length(set_times, stage, time_str, band.get("length", None))))
             bands.append(band["name"].replace(" ", "").strip())
             for i, time_slot in enumerate(slots):
                 times[time_slot][stage].name = band["name"]

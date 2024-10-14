@@ -1,0 +1,150 @@
+text:
+  title: When We Were Young Fest 2025 Schedule
+  subtitle: <a href="https://x.com/WWWYFest/status/1845902567374463344" class="button">Official Schedule</a>
+  color: "#ffffff"
+  background: "#312f30"
+  lines: darkgray
+  selection: "#ffffff"
+
+settings:
+  change_time: 10
+  linked_stages: [["Purple", "Pink"]]
+
+stages:
+  Purple: "#932be8"
+  Pink: "#f15ea1"
+  Ghost: "#ffffff"
+  Allianz: "#cf0278"
+  Verizon: "#000000"
+
+Purple:
+  11:15am:
+    name: L.S. Dunes
+  12:25pm:
+    name: Mayday Parade
+  1:50pm:
+    name: Dashboard Confessional
+  3:30pm:
+    name: Cobra Starship
+  4:55pm:
+    name: Taking Back Sunday
+  6:25pm:
+    name: Pierce the Veil
+  8:10pm:
+    name: A Day to Remember
+  10:40pm:
+    name: My Chemical Romance
+
+Pink:
+  10:55am:
+    name: Daisy Grenade
+  11:45am:
+    name: Neck Deep
+  1:05pm:
+    name: Underoath
+  2:30pm:
+    name: Coheed and Cambria
+  4:10pm:
+    name: Simple Plan
+  5:35pm:
+    name: The Used
+  7:20pm:
+    name: Jimmy Eat World
+  9:05pm:
+    name: Fall Out Boy
+
+Ghost:
+  10:40am:
+    name: The Paradox
+  11:05am:
+    name: The Forecast
+  11:40am:
+    name: Tonight Alive
+  12:25pm:
+    name: Cartel
+  1:15pm:
+    name: We the Kings
+  2:00pm:
+    name: 3OH!3
+  2:50pm:
+    name: Story of the Year
+  3:45pm:
+    name: Senses Fail
+  4:40pm:
+    name: The Starting Line
+  5:35pm:
+    name: Motion City Soundtrack
+  6:30pm:
+    name: Bayside
+  7:25pm:
+    name: New Found Glory
+  8:20pm:
+    name: Boys Like Girls
+  9:15pm:
+    name: Sleeping with Sirens
+  10:10pm:
+    name: Escape the Fate
+
+Allianz:
+  11:00am:
+    name: Carr
+  11:25am:
+    name: Emery
+  12:10pm:
+    name: Against the Current
+  12:45pm:
+    name: Anberlin
+  1:35pm:
+    name: Saosin
+  2:25pm:
+    name: Thursday
+  3:20pm:
+    name: Saves the Day
+  4:10pm:
+    name: The Maine
+  5:00pm:
+    name: Silverstein
+  5:55pm:
+    name: Movements
+  6:50pm:
+    name: Chiodos
+  7:45pm:
+    name: Basement
+  8:30pm:
+    name: Mom Jeans
+  9:20pm:
+    name: Say Anything
+  10:30pm:
+    name: Nada Surf
+
+Verizon:
+  11:05am:
+    name: Alesana
+  12:00pm:
+    name: Millionaires
+  12:25pm:
+    name: The Red Jumpsuit Aparatus
+  1:10pm:
+    name: We are the in Crowd
+  1:50pm:
+    name: The Devil Wears Prada
+  2:35pm:
+    name: State Champs
+  3:25pm:
+    name: Four Year Strong
+  4:15pm:
+    name: The Wonder Years
+  5:15pm:
+    name: Armor for Sleep
+  6:05pm:
+    name: August Burns Red
+  7:05pm:
+    name: Hawthorne Heights
+  8:05pm:
+    name: Dance Gavin Dance
+  9:05pm:
+    name: Hey Monday
+  9:55pm:
+    name: Atreyu
+  10:50pm:
+    name: Pretty Girls Make Graves

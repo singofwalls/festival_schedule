@@ -1,0 +1,57 @@
+text:
+  title: KnotFest 2024 Schedule
+  subtitle: <a href="https://knotfest.com/pages/iowa" class="button">Official Schedule</a>
+  color: "#e8e2cb"
+  background: "#160809"
+  lines: "#e8e2cb"
+  selection: "#e8e2cb"
+
+stages:
+  MAIN: "#640b09"
+  PULSE: "#640b09"
+
+MAIN:
+  11:30am:
+    name: Holy Wars
+    length: 30
+  12:15pm:
+    name: Zulu
+    length: 30
+  1:15pm:
+    name: Vended
+    length: 30
+  2:15pm:
+    name: Poison The Well
+    length: 45
+  3:30pm:
+    name: Hatebreed
+    length: 60
+  5:00pm:
+    name: Knocked Loose
+    length: 60
+  6:35pm:
+    name: Till Lindemann
+    length: 60
+  9:00pm:
+    name: Slipknot
+    length: 120
+
+PULSE:
+  12:45pm:
+    name: Dose
+    length: 30
+  1:45pm:
+    name: Spine
+    length: 30
+  3:00pm:
+    name: Swollen Teeth
+    length: 30
+  4:30pm:
+    name: Twin Temple
+    length: 30
+  6:00pm:
+    name: Dying Wish
+    length: 35
+  7:35pm:
+    name: GWAR
+    length: 85
