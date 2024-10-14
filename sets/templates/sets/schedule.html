@@ -119,6 +119,9 @@
         }
 
         setTimeout(refresh_selected, 10);
+        setTimeout(refresh_selected, 100);
+
+        window.onload = refresh_selected;
     </script>
     <div class="toast shadow-none" id="copy_toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000" style="position: fixed; right: 10%; top: 10%; border: 0px; text-align: center; z-index: 10000; width: 15em;">
         <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid {{ text.lines }}; border-radius: 5px;">Copied to Clipboard</div>
