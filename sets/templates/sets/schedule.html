@@ -24,6 +24,59 @@
     <title>Unofficial {{ text.title }}</title>
 </head>
 <body>
+    <div class="toast shadow-none" id="copy_toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000" style="position: fixed; right: 10%; top: 10%; border: 0px; text-align: center; z-index: 10000; width: 15em;">
+        <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid {{ text.lines }}; border-radius: 5px;">Copied to Clipboard</div>
+    </div>
+    <div class="container" style="flex-flow: row wrap; margin-top: 20px">
+        <h5 class="card-title display-5">
+            <span style="font-size:smaller">(Unofficial)</span> {{ text.title }}
+        </h5>
+        {{ text.subtitle|safe }}
+        <br>
+        <a href="/" class="button">All Festivals</a>
+        <div style="text-align: center;">
+            Share Link: <a href='' id="share_link" class="btn button" type="button"></a>
+        </div>
+        <div class="row gx-1">
+            <div style="background-origin: padding-box;" class="col-{{ colsize }}">
+                &nbsp;
+            </div>
+            {% for stage, color in stage_colors.items %}
+                <div class="col-{{ colsize }}">
+                    <div class="responsive_text" style="text-align: center; padding: 5px; background-color: {{ color }};">
+                        <span style="padding: 4px; margin: auto; background-color: {{ text.background }}; border-radius: 5px;">{{ stage }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% for time, stage in times.items %}
+            <div class="row gx-1" style="height: 1.5em;">
+                <div class="col-{{ colsize }}" style="height: 100%">
+                    <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted {{ text.lines }}; overflow: visible; word-break: keep-all; white-space: nowrap">
+                        {{ time|date:'h:i A' }}
+                    </div>
+                </div>
+                {% for stage_name, band in stage.items %}
+                    <div class="col-{{ colsize }}" style="height: 100%">
+                    <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible; height: 100%;
+                        {% if band.name %} cursor:pointer; border-left: 1px solid {{ text.lines }}; border-right: 1px solid {{ text.lines }}; {% else %} border-top: 1px dotted {{ text.lines }};  {% endif %}
+                        {% if "top" in band.position %} border-top: 1px solid {{ text.lines }}; {% endif %}
+                        {% if "bottom" in band.position %} border-bottom: 1px solid {{ text.lines }};{% endif %}
+                        "
+                        {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
+                        >
+                        {% if band.position == "middle" %}
+                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 3px; line-height: 1.5em; overflow-y: visible; background: none; word-break:normal; background-color: {{ text.set_background }};">{{ band.name }}</span> <span style="position:relative;"></span>
+                        {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
+                        {% endif %}
+                        &nbsp;
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
     <script>
         {% if not times %} window.location.replace("/"); {% endif %}
         let selected_bands = [];
@@ -66,6 +119,7 @@
             }
             let url = window.location.href.substring(0, param_loc);
             share_link.innerText = url + "?bands=" + band_bits;
+            share_link.href = url + "?bands=" + band_bits;
         }
 
         function copy_bits() {
@@ -73,6 +127,8 @@
             navigator.clipboard.writeText(ele.innerText);
             const toast = new bootstrap.Toast(document.getElementById("copy_toast"));
             toast.show();
+
+            return false;
         }
 
         // from https://stackoverflow.com/a/25346429
@@ -121,59 +177,13 @@
         setTimeout(refresh_selected, 10);
         setTimeout(refresh_selected, 100);
 
-        window.onload = refresh_selected;
-    </script>
-    <div class="toast shadow-none" id="copy_toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000" style="position: fixed; right: 10%; top: 10%; border: 0px; text-align: center; z-index: 10000; width: 15em;">
-        <div role="alert" aria-live="assertive" aria-atomic="true" style="font-size: larger; padding: 5px; border: 1px solid {{ text.lines }}; border-radius: 5px;">Copied to Clipboard</div>
-    </div>
-    <div class="container" style="flex-flow: row wrap; margin-top: 20px">
-        <h5 class="card-title display-5">
-            <span style="font-size:smaller">(Unofficial)</span> {{ text.title }}
-        </h5>
-        {{ text.subtitle|safe }}
-        <br>
-        <a href="/" class="button">All Festivals</a>
-        <div style="text-align: center;">
-            Share Link: <a href='javascript:copy_bits()' id="share_link" class="btn button" type="button"></a>
-        </div>
-        <div class="row gx-1">
-            <div style="background-origin: padding-box;" class="col-{{ colsize }}">
-                &nbsp;
-            </div>
-            {% for stage, color in stage_colors.items %}
-                <div class="col-{{ colsize }}">
-                    <div class="responsive_text" style="text-align: center; padding: 5px; background-color: {{ color }};">
-                        <span style="padding: 4px; margin: auto; background-color: {{ text.background }}; border-radius: 5px;">{{ stage }}</span>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+        function start() {
+            refresh_selected();
 
-        {% for time, stage in times.items %}
-            <div class="row gx-1" style="height: 1.5em;">
-                <div class="col-{{ colsize }}" style="height: 100%">
-                    <div class="responsive_text_times" style="text-align: center; border-top: 1px dotted {{ text.lines }}; overflow: visible; word-break: keep-all; white-space: nowrap">
-                        {{ time|date:'h:i A' }}
-                    </div>
-                </div>
-                {% for stage_name, band in stage.items %}
-                    <div class="col-{{ colsize }}" style="height: 100%">
-                    <div class="{% if band.name %} band band_{{ band.name|cut:' ' }} {% endif %}" data-color="{{ stage_colors|get_item:stage_name }}" style="position: relative; word-break: break-word; overflow-y: visible; height: 100%;
-                        {% if band.name %} cursor:pointer; border-left: 1px solid {{ text.lines }}; border-right: 1px solid {{ text.lines }}; {% else %} border-top: 1px dotted {{ text.lines }};  {% endif %}
-                        {% if "top" in band.position %} border-top: 1px solid {{ text.lines }}; {% endif %}
-                        {% if "bottom" in band.position %} border-bottom: 1px solid {{ text.lines }};{% endif %}
-                        "
-                        {% if band.name %} onclick="javascript:select('{{ band.name|cut:' ' }}')" {% endif %}
-                        >
-                        {% if band.position == "middle" %}
-                        <span class="responsive_text" style="width: 100%; z-index: 10; text-align: center; position: absolute; padding: 3px; line-height: 1.5em; overflow-y: visible; background: none; word-break:normal; background-color: {{ text.set_background }};">{{ band.name }}</span> <span style="position:relative;"></span>
-                        {% comment %} {% elif band.position == "bottom" %} <span style="font-size: small"> {{ band.period }} </span> {% endcomment %}
-                        {% endif %}
-                        &nbsp;
-                    </div>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endfor %}
-    </div>
+            let share_link = document.getElementById("share_link");
+            share_link.onclick = copy_bits;
+        }
+
+        window.onload = start();
+    </script>
 </body>

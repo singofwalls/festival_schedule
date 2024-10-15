@@ -1,5 +1,5 @@
 .responsive_text {
-    font-size: 1.10vw;
+    font-size: 1.10vh;
 }
 .responsive_text_times {
     font-size: .75vw;
@@ -7,7 +7,7 @@
 
 @media only screen and (max-width: 1081px) {
     .responsive_text {
-        font-size: 1.35vw;
+        font-size: 1.35vh;
     }
     .responsive_text_times {
         font-size: 1vw;
@@ -16,7 +16,7 @@
 
 @media only screen and (max-width: 1000px) {
     .responsive_text {
-        font-size: 2vw;
+        font-size: 1.1vh;
     }
     .responsive_text_times {
         font-size: 2vw;

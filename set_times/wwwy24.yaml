@@ -1,11 +1,11 @@
 text:
   title: When We Were Young Fest 2024 Schedule
   subtitle: <a href="https://x.com/WWWYFest/status/1845902567374463344" class="button">Official Schedule</a>
-  color: "#ffffff"
-  set_background: "#7ab855"
-  background: "#202020"
+  color: gainsboro
+  set_background: "#1c1c1c"
+  background: "#1a1a1a"
   lines: darkgray
-  selection: "gainsboro"
+  selection: gainsboro
 
 settings:
   change_time: 10
